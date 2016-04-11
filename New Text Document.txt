@@ -1,0 +1,121 @@
+multipage tiff
+
+
+>> cd imStacks\
+>> OrthoSlicer3d(I)
+
+ans = 
+
+OrthoSlicer3d object, containing a 256 x 256 x 70 grayscale image.
+
+>> close all
+>> OrthoSlicer3d(I)
+
+ans = 
+
+OrthoSlicer3d object, containing a 256 x 256 x 70 grayscale image.
+
+>> figure;
+>> plot(sum(sum(I,1,2)))
+Error using sum
+Trailing string input must be 'double' or 'native'.
+ 
+>> plot(squeeze(sum(sum(I,1,2))))
+Error using sum
+Trailing string input must be 'double' or 'native'.
+ 
+>> plot(squeeze(sum(sum(I,1),2)))
+>> sum(sum(I(:,:,36)))
+
+ans =
+
+     8979358
+
+>> sum(sum(I(:,:,38)))
+
+ans =
+
+     8933735
+
+>> a=sum(sum(I(:,:,36)))
+
+a =
+
+     8979358
+
+>> b=sum(sum(I(:,:,38)))
+
+b =
+
+     8933735
+
+>> c=sum(sum(I(:,:,37)))
+
+c =
+
+     7808421
+
+>> c=sum(sum(I(:,:,37)*(a+b)/2/c))
+
+c =
+
+   8.9565e+06
+
+>> I(:,:,37)=I(:,:,37)*(a+b)/2/c;
+>> plot(squeeze(sum(sum(I,1),2)))
+>> plot(squeeze(sum(sum(I,1),2)))
+>> close all
+>> plot(squeeze(sum(sum(I,1),2)))
+>> 
+>> c=sum(sum(I(:,:,37)*(a+b)/2/c))
+
+c =
+
+   7.8084e+06
+
+>> (a+b)/2/c;
+>> (a+b)/2/c
+
+ans =
+
+    1.1470
+
+>> OrthoSlicer3d(I)
+
+ans = 
+
+OrthoSlicer3d object, containing a 256 x 256 x 70 grayscale image.
+
+>> OrthoSlicer3d(I)
+
+ans = 
+
+OrthoSlicer3d object, containing a 256 x 256 x 70 grayscale image.
+
+>> (a+b)/2
+
+ans =
+
+   8.9565e+06
+
+>> c=sum(sum(I(:,:,37)))
+
+c =
+
+   7.8084e+06
+
+>> I(:,:,37)=I(:,:,37)*(a+b)/2/c;
+>> sum(sum(I(:,:,37)))
+
+ans =
+
+   8.9565e+06
+
+>> close all
+>> plot(squeeze(sum(sum(I,1),2)))
+>> close all
+>> OrthoSlicer3d(I)
+
+ans = 
+
+OrthoSlicer3d object, containing a 256 x 256 x 70 grayscale image.
